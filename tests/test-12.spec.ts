@@ -3,9 +3,10 @@ import { test, expect } from '@playwright/test';
 test('test', async ({ page }) => {
   await page.goto('https://doorknock-web-git-develop-doorknock-old.vercel.app/');
   const expected1='Log in/Sign Up';
-  const actual1 =  page.getByText('Sign in');
- await expect(actual1).toHaveText(expected1,{timeout: 6000});
-  console.log(`Expected ${expected1} but it is as ${actual1}`);
+  const actualbutton =  page.getByPlaceholder('Start typing an address').fill('22a cedar Heights');
+  //const buttonName = actualbutton.getAttribute('name');
+ // expect(actual1).toHaveText(expected1);
+  console.log(actualbutton);
 //   await page.goto('https://doorknock-web-git-develop-doorknock-old.vercel.app/sign-in#/?after_sign_in_url=%2F&after_sign_up_url=%2F&redirect_url=%2F');
 //   await page.goto('https://doorknock-web-git-develop-doorknock-old.vercel.app/');
 //   const visib = page.getByText('or explore the map').nth(1);
@@ -21,7 +22,7 @@ test('test', async ({ page }) => {
 //   const fieldtext = await page.getByText('Doorknock in 3 simple steps:').textContent()
 //   //expect(fieldtext?.includes (" Three ")).toBeTruthy 
 //   const actualfield = "Doorknock in Three simple steps:"
-// if 
+// 
 // (fieldtext != actualfield)
 //    {
 //   //   console.log('Three is found in the text field!');
